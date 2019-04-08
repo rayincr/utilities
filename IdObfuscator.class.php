@@ -13,6 +13,18 @@
  *
  * Obfuscated IDs should not be saved.
  *
+ * The methods assume that two external constants are defined:
+ * <ul>
+ *     <li>
+ *         <code>ID_OBF_SALT</code> &mdash;
+ *         An arbitrary string with which to salt various hashing operations
+ *     </li>
+ *     <li>
+ *         <code>OBF_LEN</code> &mdash;
+ *         An integer, usually between 2 and 4
+ *     </li>
+ * </ul>
+ *
  * @todo Verify tamper-resistance of new algorithm.
  */
 class IdObfuscator {
