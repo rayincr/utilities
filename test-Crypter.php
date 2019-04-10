@@ -26,8 +26,6 @@ echo
 	."    ".bin2hex(INITIALIZATION_VECTOR)."\n\n"
 	."Crypter::createKeyFile()\n"
 	."    file = ".CRYPT_KEY_FILE."\n\n"
-#	."Crypter::getKey() [encoded with bin2hex() for display]\n"
-#	."    ".bin2hex(Crypter::getKey())."\n\n"
 	."Crypter::encrypt() [encoded with bin2hex() for display]\n"
 	."    ".bin2hex($enc = Crypter::encrypt($input))."\n\n"
 	."Crypter::decrypt()\n"
