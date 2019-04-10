@@ -51,4 +51,28 @@ class Math {
 		return $to_val;
 	}
 
+
+
+	/**
+	 * Tests whether an integer is prime
+	 *
+	 * @param  int  $int The integer to test
+	 * @return bool TRUE if <code>$int</code> is prime, otherwise FALSE
+	 */
+	function isPrime($int) {
+		$int = (int)$int;
+		if ($int < 3)        {return FALSE;}
+		if (0 == ($int % 2)) {return FALSE;}
+		if (0 == ($int % 5)) {return FALSE;}
+		$sqrt = sqrt($int);
+		if ($sqrt == floor($sqrt)) {return FALSE;}
+		$div = 3;
+		while ($div <= $sqrt) {
+			if (0 == $int % $div) {return FALSE;} $div+=5;
+			if (0 == $int % $div) {return FALSE;} $div+=2;
+			if (0 == $int % $div) {return FALSE;} $div+=2;
+			if (0 == $int % $div) {return FALSE;} $div+=2;
+		}
+		return TRUE;
+	}
 }
