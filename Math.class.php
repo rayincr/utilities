@@ -26,7 +26,7 @@ class Math {
 	 * @todo   Add ability to handle negative numbers
 	 * @todo   Investigate why conversion of the integer 9223372036854775796 fails.
 	 */
-	function convertBase(string $num, int $from_base, int $to_base) {
+	public static function convertBase(string $num, int $from_base, int $to_base) {
 		// Verify that the chars in $num are limited to those used in $from_base
 		$regex = '~^['.substr(self::CHAR_MAP,0,$from_base).']+$~';
 		if (!preg_match($regex,$num)) { // if $num has out-of-range chars...
@@ -59,7 +59,7 @@ class Math {
 	 * @param  int  $int The integer to test
 	 * @return bool TRUE if <code>$int</code> is prime, otherwise FALSE
 	 */
-	function isPrime($int) {
+	public static function isPrime($int) {
 		$int = (int)$int;
 		if ($int < 3)        {return FALSE;}
 		if (0 == ($int % 2)) {return FALSE;}
